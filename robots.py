@@ -1,5 +1,6 @@
 class Product:
-	def __init__(self, price,count,tax):
+	def __init__(self, name, price,count,tax):
+		self.name = name
 		self.price = price
 		self.count = count
 		self.tax = tax
@@ -12,15 +13,16 @@ class Product:
 			return total
 
 products = [
-	Product(price=900, count=2, tax=1.25), 
-	Product(price=100, count=1, tax=1.06),
-	Product(price=100, count=1, tax=1.25)
+	Product(name="robot", price=900, count=2, tax=1.25), 
+	Product(name="book", price=100, count=1, tax=1.06), 
+	Product(name="sticker", price=10, count=1, tax=1.25)
 	]
 
 total_price = 0
 for p in products:
 	total_price = total_price + p.price_with_tax()
+	print (p.name, p.price_with_tax())
 
 print(
-	total_price
+	"Totalt:", total_price
 	)
